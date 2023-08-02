@@ -17,7 +17,7 @@ pg, err := postgres.New("postgres://myuser:mypassword@localhost:5432/db_name", p
 - MaxConnPoolSize(int) - specify the size of the connection pool
 
 // with NewOnce you can create a "singleton" postgres object - only one instance will be created, no matter how many times NewOnce was called
-pgSingleton, err := postgres.NewOnce("postgres://myuser:mypassword@localhost")
+pgSingleton, err := postgres.NewOnce("postgres://myuser:mypassword@localhost:5432/db_name")
 
 // (options for NewOnce are also allowed)
 
