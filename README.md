@@ -6,10 +6,10 @@ uses:
 example:
 ```go
 // create a postgres object
-pg, err := postgres.New("postgres://myuser:mypassword@localhost")
+pg, err := postgres.New("postgres://myuser:mypassword@localhost:5432/db_name")
 
 // you can also specify options:
-pg, err := postgres.New("postgres://myuser:mypassword@localhost", postgres.MaxConnPoolSize(5))
+pg, err := postgres.New("postgres://myuser:mypassword@localhost:5432/db_name", postgres.MaxConnPoolSize(5))
 
 // here is a list of all options:
 - ConnectionAttempts(int) - specify, how many times to try connect to postgres, if a connection fails
