@@ -1,6 +1,6 @@
 module github.com/timohahaa/postgres
 
-go 1.21
+go 1.21.0
 
 require (
 	github.com/Masterminds/squirrel v1.5.4
