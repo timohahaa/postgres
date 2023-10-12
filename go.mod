@@ -1,4 +1,4 @@
-module postgres
+module github.com/timohahaa/postgres
 
 go 1.21
 
