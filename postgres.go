@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 	"log"
+	"log/slog"
 	"sync"
 	"time"
 
@@ -73,7 +74,7 @@ func NewOnce(dbUrl string, options ...Option) (*Postgres, error) {
 			dbError = fmt.Errorf("postgres - NewOnce - pgxpool.NewWithConfig: %w", err)
 			return
 		}
-		log.Println("Succesfully connected to Postgres.")
+		slog.Info("succesfully connected to Postgres!")
 	})
 	if dbError != nil {
 		return nil, dbError
@@ -113,6 +114,6 @@ func New(dbUrl string, options ...Option) (*Postgres, error) {
 	if err != nil {
 		return nil, fmt.Errorf("postgres - New - pgxpool.NewWithConfig: %w", err)
 	}
-	log.Println("Succesfully connected to Postgres.")
+	slog.Info("succesfully connected to Postgres!")
 	return pgdb, nil
 }
